@@ -13,6 +13,13 @@ livros = [
     }
 ]
 
+# HOME (9.3)
+@app.route("/")
+def home():
+    return jsonify({
+        "mensagem": "Hello World - API Flask na Azure funcionando!"
+    })
+
 # GET
 @app.route("/livros", methods=["GET"])
 def listar_livros():
@@ -64,4 +71,4 @@ def deletar_livro(id):
     }), 404
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)
